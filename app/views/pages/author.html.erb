@@ -1,0 +1,10 @@
+
+<div class = "text-center mt-5 fs-3">
+<p><%= User.find_by(first_name: @name).first_name %>
+<%= User.find_by(first_name: @name).last_name %></p>
+<p><%= User.find_by(first_name: @name).city.name %></p>
+<p><%= User.find_by(first_name: @name).age %> ans</p>
+<p>E-mail : <%= User.find_by(first_name: @name).email %></p>
+<p><%= User.find_by(first_name: @name).description %></p>
+<p><a href="/welcome" class="btn btn-outline-warning">Retour à l'accueil</a></p>
+</div>

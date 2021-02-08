@@ -1,0 +1,43 @@
+
+<div class = "text-center fs-3 mt-5">
+     Titre du gossip 
+   <p> 
+     <span class = "text-secondary fs-4">
+      <%= Gossip.find_by(title: @id).title %>
+     </span>
+   </p>
+
+     Contenu 
+   <p>
+     <span class = "text-secondary fs-4">
+      "<%= Gossip.find_by(title: @id).content %>"
+     </span>
+   </p>
+
+ <br>
+
+    créé par:
+     <span class = "text-secondary fs-4">
+      
+         <%= Gossip.find_by(title: @id).user.first_name %>
+         <%= Gossip.find_by(title: @id).user.last_name %>
+      
+     </span>
+ <br>
+ <br>
+
+    publié le : 
+     <span class = "text-secondary fs-4">
+      <%= Gossip.find_by(title: @id).user.created_at %>
+     </span>
+     <br>
+     <br>
+     <p>
+      <a href="/author/<%=Gossip.find_by(title: @id).user.first_name%>" class="btn btn-outline-warning">voir la fiche de l'auteur</a>
+      <a href="/welcome" class="btn btn-outline-warning">Retour à l'accueil</a>
+     </p>
+
+</div>
+
+
+

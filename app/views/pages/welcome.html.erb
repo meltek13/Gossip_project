@@ -1,0 +1,22 @@
+<H1 class="text-center mb-4 mt-4">Bienvenue <%=@first_name%> Sur The Gossip Project.</H1>
+<div class="row m-4">
+    <H5 class="text-center mb-4 mt-4"> | Les derniers gossips. |</H5>
+    <% Gossip.all.each_with_index do |a, i|%>
+    <br>
+    <div class="col-sm-4 mt-4 ">
+
+        <div class="card text-center">
+        <div class="card-body">
+            <h5 class="card-title"> Title : <%=a.title%> </h5>
+            <br>
+            <br>
+            <p class="card-text">Author : <%= a.user.first_name %> </p>
+            <br>
+            <br>
+            <a href= "/gossips/<%=a.title%>/" class="btn btn-outline-warning">Voir le gossip n°<%=i + 1%></a>
+        </div>
+        </div>
+    </div>
+ <% end %>
+</div>
+    
